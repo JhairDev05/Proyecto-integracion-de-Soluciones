@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ApiCupones" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/purple</item>
+    </style>
+
+    <style name="EditTextNoUnderline" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@null</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+
+    <style name="Theme.ApiCupones" parent="Base.Theme.ApiCupones" />
+</resources>

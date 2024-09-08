@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple"
+        app:subtitleTextColor="@color/white"
+        android:elevation="4dp"
+        app:popupTheme="@color/purple" />
+
+    <ImageView
+        android:id="@+id/ivPerfil"
+        android:layout_width="220dp"
+        android:layout_height="121dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="406dp"
+        android:layout_marginEnd="126dp"
+        android:layout_marginBottom="203dp"
+        app:srcCompat="@drawable/baseline_person_24" />
+
+    <ImageView
+        android:id="@+id/ivPromos"
+        android:layout_width="227dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="417dp"
+        app:srcCompat="@drawable/money_24" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="211dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="117dp"
+        android:layout_marginEnd="127dp"
+        android:layout_marginBottom="571dp"
+        android:text="Lista de promociones"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="367dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="318dp"
+        android:text="Perfil"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+</RelativeLayout>

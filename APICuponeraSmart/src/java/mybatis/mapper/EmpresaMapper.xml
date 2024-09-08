@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="empresa">
+
+    <select id="obtenerEmpresaId" resultType="modelo.pojo.Empresa" parameterType="modelo.pojo.Empresa">
+        SELECT * FROM empresa 
+        WHERE idEmpresa = #{idEmpresa}
+    </select>
+    
+    <select id="obtenerEmpresa" resultType="modelo.pojo.Empresa">
+        
+        SELECT e.idEmpresa, e.nombreEmpresa, e.nombreComercial, e.nombreRepresentante, e.email, e.telefono, e.paginaWeb, 
+        e.rfc, e.idEstatus, es.estatus FROM empresa e 
+        INNER JOIN estatus es ON e.idEstatus = es.idEstatus
+        
+        <!--SELECT DISTINCT u.idEmpresa, u.idRol, e.*, es.estatus FROM cuponera.usuario u
+        INNER JOIN cuponera.empresa e ON u.idEmpresa = e.idEmpresa
+        INNER JOIN cuponera.estatus es ON e.idEstatus = es.idEstatus-->
+    </select>
+    
+    <select id="obtenerNombreEmpresa" resultType="modelo.pojo.Empresa" parameterType="int">
+        SELECT nombreEmpresa FROM empresa 
+        WHERE idEmpresa = #{idEmpresa}
+    </select>
+    
+    <select id="obtenerSucursalEmpresa" resultType="modelo.pojo.Sucursal" parameterType="int">
+        SELECT s.*, e.nombreEmpresa, es.estatus 
+        FROM cuponera.empresa e 
+        INNER JOIN cuponera.sucursal s ON e.idEmpresa = s.idEmpresa
+        INNER JOIN cuponera.estatus es ON s.idEstatus = es.idEstatus
+        WHERE e.idEmpresa = #{idEmpresa}
+    </select>
+    
+    <insert id="registrar" parameterType="modelo.pojo.Empresa">
+        INSERT INTO empresa (nombreEmpresa, nombreComercial, nombreRepresentante, email, telefono, paginaWeb, rfc, idEstatus) 
+        VALUES (#{nombreEmpresa}, #{nombreComercial}, #{nombreRepresentante}, #{email}, #{telefono}, #{paginaWeb}, #{rfc}, #{idEstatus})
+    </insert>
+    
+    <update id="editar" parameterType="map">
+        UPDATE empresa 
+        SET nombreEmpresa = #{nombreEmpresa}, nombreComercial = #{nombreComercial}, nombreRepresentante = #{nombreRepresentante}, 
+        email = #{email}, telefono = #{telefono}, paginaWeb = #{paginaWeb}, idEstatus = #{idEstatus} 
+        WHERE idEmpresa = #{idEmpresa}
+    </update>
+    
+    <delete id="eliminar" parameterType="int">
+        DELETE FROM empresa 
+        WHERE idEmpresa = #{idEmpresa}
+    </delete>
+    
+    <select id="buscarPorNombreRFC" resultType="modelo.pojo.Empresa" parameterType="String">
+        SELECT * FROM empresa
+        WHERE nombreEmpresa LIKE "%"#{nombreEmpresa}"%"
+        UNION
+        SELECT * FROM empresa
+        WHERE nombreRepresentante LIKE "%"#{nombreEmpresa}"%"
+        UNION
+        SELECT * FROM empresa
+        WHERE rfc LIKE "%"#{nombreEmpresa}"%"
+    </select>
+
+   <update id="guardarFoto" parameterType="map">
+        UPDATE empresa 
+        SET foto = #{foto} 
+        WHERE idEmpresa = #{idEmpresa}
+    </update>
+    
+    <update id="subirFoto" parameterType="map">
+        UPDATE empresa 
+        SET foto = #{foto} 
+        WHERE idEmpresa = #{idEmpresa}
+    </update>
+    
+    <select id="obtenerFoto" parameterType="int" resultType="modelo.pojo.Empresa">
+        SELECT idEmpresa, nombreEmpresa, nombreComercial, TO_BASE64(foto) as 'fotoBase64' 
+        FROM empresa 
+        WHERE idEmpresa = #{idEmpresa}
+    </select>
+    
+</mapper>
+
+    

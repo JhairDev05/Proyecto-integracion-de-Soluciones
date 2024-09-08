@@ -1,0 +1,76 @@
+.mainFxmlClass {
+
+}
+
+/*
+#Anchor3{
+    -fx-background-image: url('img/logo.jpg');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+
+}*/
+
+#Anchor3{
+    -fx-background-image: url('img/logo2.jpg');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+/*
+#AnchorPane{
+    -fx-background-image: url('img/fondo.jpg');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 50%;
+    -fx-alignment: CENTER_RIGHT;
+}*/
+
+#Anchor2{
+    -fx-background-color: #1066cc;
+    -fx-alignment: center; /* Centro en el AnchorPane */
+
+    -fx-background-radius: 10px; /* Radio de los bordes */
+    -fx-border-radius: 10px; /* Radio de los bordes */
+    -fx-background-insets: 0, 2, 2; /* Espacio para la sombra */
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, .1), 10, 0, 0, 1); /* Sombra */
+}
+
+#Anchor2 Label{
+    -fx-text-fill: #FFFFFF;
+}
+
+#sesion {
+    -fx-background-color: #54cd1f; /* Color de fondo azul medio fuerte */
+    -fx-text-fill: #FFFFFF; /* Color de texto blanco */
+    -fx-background-radius: 10px; /* Hace el botón redondo */
+    -fx-padding: 10px 20px; /* Ajusta el relleno (padding) para el tamaño del botón */
+    -fx-alignment: center;
+
+    -fx-cursor: hand; /* Cambia el cursor al pasar el cursor sobre el botón */
+}
+
+#sesion:hover {
+    -fx-background-color: #4E90A7; /* Restaura el color de fondo al quitar el cursor */
+}
+
+#registro {
+    -fx-background-color: transparent; /* Hace que el fondo sea transparente */
+    -fx-text-fill: #54cd1f; 
+    -fx-font-size: 14px; /* Tamaño del texto */
+    -fx-alignment: center;
+    -fx-cursor: hand;
+}
+
+#usuario{
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: transparent;
+    -fx-border-color: #44c545;
+    -fx-border-width: 0px 0px 2px 0px;
+}
+
+#password{
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: transparent;
+    -fx-border-color: #44c545;
+    -fx-border-width: 0px 0px 2px 0px;
+}

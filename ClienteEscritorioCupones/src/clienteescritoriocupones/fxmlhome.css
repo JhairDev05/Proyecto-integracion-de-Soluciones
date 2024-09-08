@@ -1,0 +1,113 @@
+.mainFxmlClass {
+
+}
+
+#fondo{
+    -fx-background-image: url('img/fondo.jpg');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-color: #54cd1f;
+}
+
+#apEmpresa {
+    -fx-background-image: url('img/cp.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+
+#btnEmpresa{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+#aplogo{
+    -fx-background-color: #84e474;
+    -fx-background-image: url('img/loggo.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+#btnhome{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+#apbarra{
+    -fx-background-image: url('img/loggo.png');
+    -fx-background-size: 15%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left;
+    -fx-background-color: #1066cc;
+}
+
+#bienvenido{
+    -fx-background-image: url('img/bienvenido.png');
+    -fx-background-size: 90%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#apSucursal{
+    -fx-background-image: url('img/cupon2.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#btnSucursal{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+#apPromo{
+    -fx-background-image: url('img/cupon3.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#btnPromo{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+#apUser{
+    -fx-background-image: url('img/cupon4.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#btnUser{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+#btnCanjearCupon{
+    -fx-background-color: #54cd1f; /* Color de fondo azul medio fuerte */
+    -fx-text-fill: #FFFFFF; /* Color de texto blanco */
+    -fx-background-radius: 10px; /* Hace el botón redondo */
+    -fx-padding: 10px 20px; /* Ajusta el relleno (padding) para el tamaño del botón */
+    -fx-alignment: center;
+
+    -fx-cursor: hand; /* Cambia el cursor al pasar el cursor sobre el botón */
+}
+
+#btnCanjearCupon:hover {
+    -fx-background-color: #4E90A7; /* Restaura el color de fondo al quitar el cursor */
+}
+
+#apCupon {
+    -fx-background-image: url('img/cupon5.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+
+#btnCupon{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}

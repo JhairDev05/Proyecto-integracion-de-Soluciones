@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="fondo" prefHeight="620.0" prefWidth="762.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clienteescritoriocupones.FXMLFormularioUsuarioController">
+    <stylesheets>
+        <URL value="@fxmlformulariousuario.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane id="apbarra" prefHeight="91.0" prefWidth="762.0">
+         <children>
+            <Label id="lb" layoutX="190.0" layoutY="15.0" text="Registrar usuario" textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT" size="50.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="apFormulario" layoutX="76.0" layoutY="117.0" prefHeight="460.0" prefWidth="612.0">
+         <children>
+            <Label id="lb" layoutX="44.0" layoutY="44.0" text="Nombre">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label id="lb" layoutX="44.0" layoutY="119.0" text="Apellido paterno">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label id="lb" layoutX="44.0" layoutY="184.0" text="Apellido materno">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfNombre" layoutX="44.0" layoutY="72.0" prefHeight="27.0" prefWidth="200.0" />
+            <TextField fx:id="tfApellidoP" layoutX="44.0" layoutY="136.0" prefHeight="27.0" prefWidth="200.0" />
+            <TextField fx:id="tfApellidoM" layoutX="44.0" layoutY="202.0" prefHeight="27.0" prefWidth="200.0" />
+            <Button id="btn" layoutX="225.0" layoutY="395.0" mnemonicParsing="false" onAction="#btnAgregarUsuario" text="Guardar" />
+            <Button id="btn" fx:id="btnCancelar" layoutX="326.0" layoutY="395.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
+            <ComboBox fx:id="cbEmpresa" layoutX="342.0" layoutY="241.0" prefHeight="27.0" prefWidth="200.0" promptText="Empresa" />
+            <Label id="lb" layoutX="44.0" layoutY="245.0" text="Curp">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label id="lb" layoutX="44.0" layoutY="310.0" text="Correo">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfCurp" layoutX="44.0" layoutY="266.0" prefHeight="27.0" prefWidth="200.0" />
+            <TextField fx:id="tfCorreo" layoutX="44.0" layoutY="332.0" prefHeight="27.0" prefWidth="200.0" />
+            <Label id="lb" layoutX="342.0" layoutY="114.0" text="Contraseña">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cbRol" layoutX="342.0" layoutY="192.0" prefHeight="27.0" prefWidth="200.0" promptText="Rol" />
+            <TextField fx:id="pfPassword" layoutX="342.0" layoutY="136.0" prefHeight="27.0" prefWidth="200.0" />
+            <TextField fx:id="tfNombreUsuario" layoutX="342.0" layoutY="72.0" prefHeight="27.0" prefWidth="200.0" />
+            <Label id="lb" layoutX="342.0" layoutY="44.0" text="Nombre de usuario">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbNombre" layoutX="44.0" layoutY="101.0" prefHeight="15.0" prefWidth="128.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbApellidoP" layoutX="44.0" layoutY="163.0" prefHeight="15.0" prefWidth="128.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbApellidoM" layoutX="44.0" layoutY="231.0" prefHeight="15.0" prefWidth="128.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbNombreUsuario" layoutX="343.0" layoutY="101.0" prefHeight="15.0" prefWidth="128.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbCurp" layoutX="44.0" layoutY="293.0" prefHeight="15.0" prefWidth="128.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbCorreo" layoutX="44.0" layoutY="359.0" prefHeight="15.0" prefWidth="128.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbPassword" layoutX="343.0" layoutY="163.0" prefHeight="15.0" prefWidth="128.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbRol" layoutX="343.0" layoutY="224.0" prefHeight="15.0" prefWidth="128.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbEmpresa" layoutX="343.0" layoutY="272.0" prefHeight="15.0" prefWidth="128.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

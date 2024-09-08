@@ -1,0 +1,369 @@
+<!-- res/layout/activity_main.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetallePromocionActivity">
+
+
+    <ImageView
+        android:id="@+id/ivFotoPromo"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="215dp"
+        android:layout_marginBottom="590dp"
+        android:textAlignment="center"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/edNombre"
+        style="@style/EditTextNoUnderline"
+        android:layout_width="201dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="493dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Nombre"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edValor"
+        style="@style/EditTextNoUnderline"
+        android:layout_width="342dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="166dp"
+        android:layout_marginTop="521dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="165dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Valor"
+        android:inputType="text" />
+
+
+    <EditText
+        android:id="@+id/edCodigo"
+        style="@style/EditTextNoUnderline"
+        android:layout_width="342dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="635dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="51dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Codigo"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edNumeroCupones"
+        style="@style/EditTextNoUnderline"
+        android:layout_width="342dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="579dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="106dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="NumeroCupones"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edFechaInicio"
+        style="@style/EditTextNoUnderline"
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="298dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="387dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="FechaInicio"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edNombrePromocion"
+        style="@style/EditTextNoUnderline"
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="466dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="219dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="TipoPromo"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edRestriccion"
+        style="@style/EditTextNoUnderline"
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="412dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="273dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Restriccion"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edFechaFin"
+        style="@style/EditTextNoUnderline"
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="354dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="331dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="FechaFin"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edDescripcion"
+        style="@style/EditTextNoUnderline"
+        android:layout_width="197dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="246dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="439dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Descripcion"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/txTitulo"
+        android:layout_width="184dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="202dp"
+        android:layout_marginBottom="700dp"
+        android:text="Detalles de la promoción"
+        android:textColor="@color/purple" />
+
+    <Button
+        android:id="@+id/btnListaSucursales"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="663dp"
+        android:backgroundTint="@color/purple"
+        android:text="Sucursales validas" />
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="261dp"
+        android:layout_marginBottom="488dp"
+        android:text="Nombre:"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="266dp"
+        android:layout_marginEnd="261dp"
+        android:layout_marginBottom="430dp"
+        android:text="Descripción:"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tvFechaInicio"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="321dp"
+        android:layout_marginEnd="256dp"
+        android:layout_marginBottom="375dp"
+        android:text="Fecha Inicial:"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tvFechaFin"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="378dp"
+        android:layout_marginEnd="257dp"
+        android:layout_marginBottom="318dp"
+        android:text="Fecha Final:"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tvRestriccion"
+        android:layout_width="129dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="429dp"
+        android:layout_marginEnd="253dp"
+        android:layout_marginBottom="267dp"
+        android:text="Restricciones:"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tvTipoPromo"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="490dp"
+        android:layout_marginEnd="253dp"
+        android:layout_marginBottom="206dp"
+        android:textAlignment="center"
+        android:text="Tipo de promo:" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="548dp"
+        android:layout_marginEnd="249dp"
+        android:layout_marginBottom="148dp"
+        android:textAlignment="center"
+        android:text="Valor:" />
+
+    <TextView
+        android:id="@+id/tv_cuponesCan"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="604dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="92dp"
+        android:textAlignment="center"
+        android:text="Cupones disponibles:" />
+
+    <TextView
+        android:id="@+id/tvCodigo"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="659dp"
+        android:layout_marginEnd="245dp"
+        android:layout_marginBottom="37dp"
+        android:textAlignment="center"
+        android:text="Codigo:" />
+
+    <Button
+        android:id="@+id/btnMostrarCodigo"
+        android:layout_width="177dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCodigo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="-595dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="545dp"
+        android:backgroundTint="@color/purple"
+        android:text="Mostrar Código" />
+
+
+</RelativeLayout>

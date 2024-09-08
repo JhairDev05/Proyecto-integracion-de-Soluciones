@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="fondo" prefHeight="620.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clienteescritoriocupones.FXMLAdminCuponController">
+   <children>
+      <TableView id="tvEmpresa" fx:id="tvCupon" layoutX="38.0" layoutY="216.0" prefHeight="362.0" prefWidth="686.0">
+         <columns>
+            <TableColumn fx:id="colNombrePromo" prefWidth="129.0" text="Nombre promoción" />
+            <TableColumn fx:id="colCuponesDisponibles" prefWidth="136.0" text="Cupones disponibles" />
+            <TableColumn fx:id="colNombreEmpresa" prefWidth="154.0" text="Nombre empresa" />
+            <TableColumn fx:id="colNombreSucursal" prefWidth="141.0" text="Nombre sucursal" />
+            <TableColumn fx:id="colEstatus" prefWidth="125.0" text="Estatus" />
+         </columns>
+      </TableView>
+      <AnchorPane id="apbarra" prefHeight="64.0" prefWidth="762.0">
+         <children>
+            <Button id="btnhome" mnemonicParsing="false" onAction="#btnHome" prefHeight="91.0" prefWidth="106.0" />
+            <Label id="lb" layoutX="293.0" layoutY="15.0" text="Cupones" textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT" size="50.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button id="btn" fx:id="btnAgregarCupon" layoutX="333.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnAgregarCupon" prefHeight="37.0" prefWidth="90.0" text="Agregar" />
+      <Button id="btn" layoutX="439.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnEditarCupon" prefHeight="25.0" prefWidth="90.0" text="Editar" />
+      <Button id="btn" fx:id="btnEliminarCupon" layoutX="545.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnEliminarCupon" prefHeight="25.0" prefWidth="90.0" text="Eliminar" />
+      <TextField fx:id="tfBuscarCupon" layoutX="38.0" layoutY="141.0" prefHeight="25.0" prefWidth="282.0" promptText="Buscar cupón" />
+      <Button id="btn" layoutX="650.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnCanjearCupon" prefHeight="25.0" prefWidth="90.0" text="Canjear" />
+   </children>
+   <stylesheets>
+      <URL value="@fxmladminempresa.css" />
+   </stylesheets>
+</AnchorPane>

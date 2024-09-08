@@ -1,0 +1,50 @@
+.mainFxmlClass {
+
+}
+
+#fondo{
+    -fx-background-image: url('img/fondo.jpg');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+#apbarra{
+    -fx-background-image: url('img/loggo.png');
+    -fx-background-size: 15%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left;
+    -fx-background-color: #1066cc;
+}
+
+#btnhome{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+#titulo{
+    -fx-background-image: url('img/promo.png');
+    -fx-background-size: 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#tvPromos{
+    -fx-background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0, 0); /* Sombra */
+    -fx-border-width: 0 2px 2px 0; /* Grosor del borde */
+    -fx-border-color: #d7dfc3; /* Color del borde */
+}
+
+#btn{
+    -fx-background-color: #54cd1f; /* Color de fondo azul medio fuerte */
+    -fx-text-fill: #FFFFFF; /* Color de texto blanco */
+    -fx-background-radius: 10px; /* Hace el botón redondo */
+    -fx-padding: 10px 20px; /* Ajusta el relleno (padding) para el tamaño del botón */
+    -fx-alignment: center;
+
+    -fx-cursor: hand; /* Cambia el cursor al pasar el cursor sobre el botón */
+}
+
+#btn:hover {
+    -fx-background-color: #4E90A7; /* Restaura el color de fondo al quitar el cursor */
+}

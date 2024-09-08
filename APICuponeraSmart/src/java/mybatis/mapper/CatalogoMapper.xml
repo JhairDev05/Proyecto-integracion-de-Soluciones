@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="catalogo">
+    
+    <select id="obtenerRol" resultType="modelo.pojo.Rol">
+        SELECT * FROM rol 
+    </select>
+    
+    <select id="obtenerEstatus" resultType="modelo.pojo.Estatus">
+        SELECT * FROM estatus
+    </select>
+    
+    <select id="obtenerTipoPromo" resultType="modelo.pojo.TipoPromo">
+        SELECT * FROM tipopromo
+    </select>
+    
+    <select id="obtenerCategoria" resultType="modelo.pojo.Categoria">
+        SELECT * FROM categoria
+    </select>
+    
+    <select id="obtenerSucursal" resultType="modelo.pojo.Sucursal">
+        SELECT * FROM sucursal
+    </select>
+    
+    <select id="obtenerPromocion" resultType="modelo.pojo.Promocion">
+        SELECT p.idPromocion, p.nombrePromo, p.descripcion, p.fechaInicioPromo, p.fechaFinPromo, p.restricciones, p.cantidadRebajada, 
+        p.codigoPromocion, p.idSucursal, p.idTipoPromo, p.idCategoria
+        FROM promocion p
+    </select>
+    
+    <select id="obtenerCupon" resultType="modelo.pojo.Cupon">
+        SELECT * FROM cupon
+    </select>
+
+</mapper>

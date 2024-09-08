@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cupon">
+    
+    <select id="obtenerCuponPorId" resultType="modelo.pojo.Cupon" parameterType="int">
+        SELECT *
+        FROM cupon
+        WHERE idCupon = #{idCupon}
+    </select>
+    
+    <select id="obtenerUltimoIdCupon" resultType="modelo.pojo.Cupon">
+         SELECT LAST_INSERT_ID()
+    </select>
+    
+    <select id="obtenerCupones" resultType="modelo.pojo.Cupon">
+        SELECT c.idCupon, c.cuponesDisponibles, p.idPromocion, p.nombrePromo, p.codigoPromocion, e.nombreEmpresa, s.nombreSucursal, es.estatus 
+        FROM cuponera.promocion p 
+        INNER JOIN cuponera.empresa e ON e.idEmpresa = p.idEmpresa 
+        INNER JOIN cuponera.sucursal s ON s.idEmpresa = e.idEmpresa 
+        INNER JOIN cuponera.cupon c ON c.idCupon = p.idCupon
+        INNER JOIN cuponera.estatus es ON es.idEstatus = p.idEstatus
+        GROUP BY p.idPromocion
+        
+    </select>
+    
+    <select id="obtenerNumeroCupones" resultType="int" parameterType="int">
+        SELECT c.cuponesDisponibles 
+        FROM cupon c 
+        INNER JOIN promocion p ON c.idCupon = p.idCupon
+        WHERE p.idPromocion = #{idPromocion}
+    </select>
+    
+    <update id="decrementarNumeroCupones" parameterType="int">
+        UPDATE cupon
+        SET cuponesDisponibles = cuponesDisponibles - 1
+        WHERE idCupon = #{idCupon} AND cuponesDisponibles > 0
+    </update>
+    
+    <select id="obtenerCuponPromo" resultType="modelo.pojo.Promocion" parameterType="modelo.pojo.Promocion">
+        SELECT * FROM cupon 
+        WHERE idPromocion = #{idPromocion}
+    </select>
+    
+    <select id="obtenerCuponPromocion" resultType="modelo.pojo.Promocion" parameterType="modelo.pojo.Promocion">
+        SELECT p.*, cuponesDisponibles
+        FROM promocion p
+        LEFT JOIN cupon c ON p.idPromocion = c.idPromocion
+        WHERE p.fechaFinPromo >= NOW() AND c.cuponesDisponibles
+    </select>
+    
+    <select id="obtenerCuponPromoFecha" resultType="modelo.pojo.Promocion" parameterType="modelo.pojo.Promocion">
+        SELECT p.*, SUM(c.cuponesDisponibles) AS totalCuponesDisponibles
+        FROM cuponera.promocion p
+        LEFT JOIN cuponera.cupon c ON p.idPromocion = c.idPromocion
+        WHERE p.fechaFinPromo >= NOW() AND c.cuponesDisponibles > 0
+        GROUP BY p.idPromocion
+    </select>
+    
+    <insert id="registrar" parameterType="modelo.pojo.Cupon">
+        <selectKey keyProperty="idCupon" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+            INSERT INTO cupon (cuponesDisponibles) 
+            VALUES (#{cuponesDisponibles})
+    </insert>
+
+    
+    <update id="editar" parameterType="map">
+        UPDATE cupon 
+        SET cuponesDisponibles = #{cuponesDisponibles}
+        WHERE idCupon = #{idCupon}
+    </update>
+    
+    <delete id="eliminar" parameterType="int">
+        DELETE FROM cupon 
+        WHERE idCupon = #{idCupon}
+    </delete>
+</mapper>

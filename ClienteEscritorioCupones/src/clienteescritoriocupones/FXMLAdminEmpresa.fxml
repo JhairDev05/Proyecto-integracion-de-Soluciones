@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="fondo" prefHeight="620.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clienteescritoriocupones.FXMLAdminEmpresaController">
+    <stylesheets>
+        <URL value="@fxmladminempresa.css" />
+    </stylesheets>
+   <children>
+      <TableView id="tvEmpresa" fx:id="tvEmpresa" layoutX="38.0" layoutY="216.0" prefHeight="362.0" prefWidth="686.0">
+        <columns>
+          <TableColumn fx:id="colNombreEmpresa" prefWidth="83.0" text="Empresa" />
+          <TableColumn fx:id="colNombreComercial" prefWidth="83.0" text="Comercial" />
+            <TableColumn fx:id="colNombreR" prefWidth="98.0" text="Representante" />
+            <TableColumn fx:id="colCorreo" prefWidth="95.0" text="Correo" />
+            <TableColumn fx:id="colTelefono" prefWidth="81.0" text="Teléfono" />
+            <TableColumn fx:id="colPaginaWeb" prefWidth="89.0" text="Página web" />
+            <TableColumn fx:id="colRfc" prefWidth="74.0" text="RFC" />
+            <TableColumn fx:id="colEstatus" prefWidth="85.0" text="Estatus" />
+        </columns>
+      </TableView>
+      <AnchorPane id="apbarra" prefHeight="64.0" prefWidth="762.0">
+         <children>
+            <Button id="btnhome" mnemonicParsing="false" onAction="#btnHome" prefHeight="91.0" prefWidth="106.0" />
+            <AnchorPane id="titulo" fx:id="lbTitulo" layoutX="240.0" layoutY="14.0" prefHeight="63.0" prefWidth="282.0" />
+         </children>
+      </AnchorPane>
+      <Button id="btn" layoutX="422.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnFormularioEmpresa" prefHeight="37.0" prefWidth="90.0" text="Agregar" />
+      <Button id="btn" layoutX="528.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnEditarEmpresa" prefHeight="25.0" prefWidth="90.0" text="Editar" />
+      <Button id="btn" layoutX="636.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnEliminarEmpresa" prefHeight="25.0" prefWidth="90.0" text="Eliminar" />
+      <TextField fx:id="tfBuscarEmpresa" layoutX="38.0" layoutY="141.0" prefHeight="25.0" prefWidth="282.0" promptText="Buscar empresa" />
+   </children>
+</AnchorPane>

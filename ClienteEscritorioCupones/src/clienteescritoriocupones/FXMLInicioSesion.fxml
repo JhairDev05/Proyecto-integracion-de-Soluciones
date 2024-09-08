@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="762.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clienteescritoriocupones.FXMLInicioSesionController">
+    <stylesheets>
+        <URL value="@fxmliniciosesion.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane id="Anchor3" fx:id="loginForm" layoutX="-1.0" prefHeight="620.0" prefWidth="379.0" />
+      <AnchorPane id="Anchor2" fx:id="registerForm" layoutX="398.0" layoutY="118.0" prefHeight="384.0" prefWidth="339.0">
+         <children>
+            <Label layoutX="118.0" layoutY="24.0" text="Iniciar sesión">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label id="nombre" layoutX="104.0" layoutY="90.0" text="Nombre de usuario">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label id="contraseña" layoutX="104.0" layoutY="169.0" text="Contraseña">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField id="usuario" fx:id="tfNombreUsuario" layoutX="95.0" layoutY="120.0" />
+            <PasswordField id="password" fx:id="pfPassword" layoutX="95.0" layoutY="195.0" />
+            <Button id="sesion" layoutX="115.0" layoutY="250.0" mnemonicParsing="false" onAction="#btnIniciarSesion" text="Iniciar sesion" />
+            <Button id="registro" fx:id="btnRegistro" layoutX="125.0" layoutY="327.0" mnemonicParsing="false" onAction="#btnIrFormularioRegistro" text="Registrarse" />
+            <Label layoutX="135.0" layoutY="302.0" text="¿Eres nuevo?" />
+            <Label fx:id="lbNombre" layoutX="101.0" layoutY="149.0">
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
+            <Label fx:id="lbPassword" layoutX="101.0" layoutY="223.0">
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

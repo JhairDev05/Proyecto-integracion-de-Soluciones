@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="promocion">
+    
+    <select id="obtenerPromoId" resultType="modelo.pojo.Promocion" parameterType="modelo.pojo.Promocion">
+        SELECT * FROM promocion
+        WHERE idPromocion = #{idPromocion}
+    </select>
+    
+    <select id="obtenerCategoriaId" resultType="modelo.pojo.Categoria" parameterType="int">
+        SELECT * FROM categoria 
+        WHERE idCategoria = #{idCategoria}
+    </select>
+    
+    <select id="obtenerPromoPorId" resultType="modelo.pojo.Promocion" parameterType="int">
+        SELECT p.idPromocion, p.idCupon, p.codigoPromocion FROM promocion p
+        WHERE idPromocion = #{idPromocion}
+    </select>
+    
+    <!-- 
+    <update id="actualizarEstadoInactivo" parameterType="map">
+        UPDATE promocion p
+        INNER JOIN cupon c ON p.idCupon = c.idCupon
+        SET p.idEstatus = 2
+        WHERE p.idPromocion = #{idPromocion} AND c.cuponesDisponibles <= 0
+    </update>-->
+    
+    <select id="actualizarEstadoInactivo" parameterType="map" resultType="int">
+        UPDATE promocion p
+        SET p.idEstatus = 2
+        WHERE p.idPromocion = #{idPromocion} 
+        AND NOT EXISTS (
+            SELECT 1 FROM cupon c 
+            WHERE p.idCupon = c.idCupon 
+            AND c.cuponesDisponibles > 0
+        )
+    </select>
+    
+    <select id="obtenerPromocion" resultType="modelo.pojo.Promocion">
+        
+        <!--
+        SELECT DISTINCT u.idUsuario, u.idRol, p.idPromocion, p.nombrePromo, p.descripcion, p.fechaInicioPromo, p.fechaFinPromo, p.restricciones, p.cantidadRebajada, 
+        p.codigoPromocion, p.idSucursal, p.idTipoPromo, p.idCategoria, p.idEmpresa, p.idEstatus, p.idCupon, 
+        tp.nombrePromocion, c.nombreCategoria, e.estatus, cu.cuponesDisponibles
+        FROM usuario u 
+        INNER JOIN promocion p ON u.idEmpresa = p.idEmpresa 
+        INNER JOIN tipopromo tp ON p.idTipoPromo = tp.idTipoPromo
+        INNER JOIN categoria c ON p.idCategoria = c.idCategoria
+        INNER JOIN estatus e ON p.idEstatus = e.idEstatus
+        INNER JOIN cupon cu ON p.idCupon = cu.idCupon-->
+        
+        
+        SELECT DISTINCT 
+            p.idPromocion, p.nombrePromo, p.descripcion, p.fechaInicioPromo, p.fechaFinPromo, p.restricciones, p.cantidadRebajada, 
+            p.codigoPromocion, p.idSucursal, p.idTipoPromo, p.idCategoria, p.idEmpresa, p.idEstatus, p.idCupon, 
+            tp.nombrePromocion, c.nombreCategoria, e.estatus, cu.cuponesDisponibles
+        FROM 
+            cuponera.promocion p
+        INNER JOIN 
+            cuponera.tipopromo tp ON p.idTipoPromo = tp.idTipoPromo
+        INNER JOIN 
+            cuponera.categoria c ON p.idCategoria = c.idCategoria
+        INNER JOIN 
+            cuponera.estatus e ON p.idEstatus = e.idEstatus
+        INNER JOIN 
+            cuponera.cupon cu ON p.idCupon = cu.idCupon
+        
+    </select>
+    
+    <select id="obtenerPromoSucursal" resultType="modelo.pojo.Promocion" parameterType="modelo.pojo.Promocion">
+        <!--
+        SELECT DISTINCT u.idUsuario, u.idRol, p.idPromocion, p.nombrePromo, p.descripcion, p.fechaInicioPromo, p.fechaFinPromo, p.restricciones, p.cantidadRebajada, 
+        p.codigoPromocion, p.idSucursal, p.idTipoPromo, p.idCategoria, p.idEmpresa, p.idEstatus, p.idCupon, 
+        tp.nombrePromocion, c.nombreCategoria, e.estatus, cu.cuponesDisponibles
+        FROM usuario u 
+        INNER JOIN promocion p ON u.idEmpresa = p.idEmpresa 
+        INNER JOIN tipopromo tp ON p.idTipoPromo = tp.idTipoPromo
+        INNER JOIN categoria c ON p.idCategoria = c.idCategoria
+        INNER JOIN estatus e ON p.idEstatus = e.idEstatus
+        INNER JOIN cupon cu ON p.idCupon = cu.idCupon
+        WHERE p.idEmpresa = #{idEmpresa}-->
+        
+        SELECT DISTINCT 
+            p.idPromocion, p.nombrePromo, p.descripcion, p.fechaInicioPromo, p.fechaFinPromo, p.restricciones, p.cantidadRebajada, 
+            p.codigoPromocion, p.idSucursal, p.idTipoPromo, p.idCategoria, p.idEmpresa, p.idEstatus, p.idCupon, 
+            tp.nombrePromocion, c.nombreCategoria, e.estatus, cu.cuponesDisponibles
+        FROM 
+            cuponera.promocion p
+        INNER JOIN 
+            cuponera.tipopromo tp ON p.idTipoPromo = tp.idTipoPromo
+        INNER JOIN 
+            cuponera.categoria c ON p.idCategoria = c.idCategoria
+        INNER JOIN 
+            cuponera.estatus e ON p.idEstatus = e.idEstatus
+        INNER JOIN 
+            cuponera.cupon cu ON p.idCupon = cu.idCupon
+        WHERE 
+            p.idEmpresa = #{idEmpresa}
+    </select>
+    
+    <insert id="registrar" parameterType="modelo.pojo.Promocion">
+        INSERT INTO promocion (nombrePromo, descripcion, fechaInicioPromo, fechaFinPromo, restricciones, 
+        cantidadRebajada, codigoPromocion, idSucursal, idTipoPromo, idCategoria, idEmpresa, idEstatus, idCupon) 
+        VALUES (#{nombrePromo}, #{descripcion}, #{fechaInicioPromo}, #{fechaFinPromo}, #{restricciones}, 
+        #{cantidadRebajada}, #{codigoPromocion}, #{idSucursal}, #{idTipoPromo}, #{idCategoria}, #{idEmpresa}, 
+        #{idEstatus}, #{idCupon})
+    </insert>
+    
+    <update id="editar" parameterType="map">
+        UPDATE promocion 
+        SET nombrePromo = #{nombrePromo}, descripcion = #{descripcion}, fechaInicioPromo = #{fechaInicioPromo}, 
+        fechaFinPromo = #{fechaFinPromo}, restricciones = #{restricciones}, 
+        cantidadRebajada = #{cantidadRebajada}, codigoPromocion = #{codigoPromocion}, idSucursal = #{idSucursal}, 
+        idTipoPromo = #{idTipoPromo}, idCategoria = #{idCategoria}, idEmpresa = #{idEmpresa}, idEstatus = #{idEstatus} 
+        WHERE idPromocion = #{idPromocion}
+    </update>
+    
+    <delete id="eliminar" parameterType="int">
+        DELETE FROM promocion 
+        WHERE idPromocion = #{idPromocion}
+    </delete>
+    
+    <select id="obtenerPromocionSucursal" resultType="modelo.pojo.Promocion" parameterType="int">
+        SELECT p.* FROM cuponera.promocion p  
+        INNER JOIN cuponera.sucursal s ON s.idSucursal = p.idSucursal
+        WHERE idPromocion = #{idPromocion}
+    </select>
+    
+    <select id="buscarPromocion" resultType="modelo.pojo.Promocion" parameterType="String">
+        SELECT * FROM promocion
+        WHERE nombrePromo LIKE "%"#{nombrePromo}"%"
+        UNION
+        SELECT * FROM promocion
+        WHERE fechaInicioPromo LIKE "%"#{nombrePromo}"%"
+        UNION
+        SELECT * FROM promocion
+        WHERE fechaFinPromo LIKE "%"#{nombrePromo}"%"
+    </select>
+    
+    <select id="verificarCodigoExistente" resultType="int" parameterType="modelo.pojo.Promocion">
+        SELECT COUNT(*) FROM promocion WHERE codigoPromocion = #{codigoPromocion}
+    </select>
+    
+    <select id="obtenerPromosSucursal" resultType="modelo.pojo.Promocion" parameterType="modelo.pojo.Promocion">
+        SELECT * FROM promocion 
+        WHERE idSucursal = #{idSucursal}
+    </select>
+    
+    <update id="guardarFoto" parameterType="map">
+        UPDATE promocion 
+        SET foto = #{foto} 
+        WHERE idPromocion = #{idPromocion}
+    </update>
+    
+    <update id="subirFoto" parameterType="map">
+        UPDATE promocion 
+        SET foto = #{foto} 
+        WHERE idPromocion = #{idPromocion}
+    </update>
+    
+    <select id="obtenerFoto" parameterType="int" resultType="modelo.pojo.Promocion">
+        SELECT idPromocion, nombrePromo, descripcion, TO_BASE64(foto) as 'fotoBase64' 
+        FROM promocion 
+        WHERE idPromocion = #{idPromocion}
+    </select>
+    
+    <select id="obtenerPromoCategoria" parameterType="int" resultType="modelo.pojo.Promocion">
+        SELECT p.* FROM promocion p 
+        INNER JOIN categoria c ON p.idCategoria = c.idCategoria 
+        WHERE p.idCategoria = #{idCategoria}
+    </select>
+    
+    <select id="obtenerCodigoPromocion" parameterType="int" resultType="String">
+        SELECT codigoPromocion FROM cuponera.promocion 
+        WHERE idPromocion = #{idPromocion}
+    </select>
+    
+</mapper>

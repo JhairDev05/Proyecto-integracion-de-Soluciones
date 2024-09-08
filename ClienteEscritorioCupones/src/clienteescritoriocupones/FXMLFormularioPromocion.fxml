@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="fondo" prefHeight="620.0" prefWidth="762.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clienteescritoriocupones.FXMLFormularioPromocionController">
+    <stylesheets>
+        <URL value="@fxmlformulariopromocion.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane id="apbarra" prefHeight="91.0" prefWidth="762.0">
+         <children>
+            <Label id="lb" layoutX="190.0" layoutY="15.0" text="Registrar promoción" textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT" size="50.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="apFormulario" layoutX="76.0" layoutY="117.0" prefHeight="480.0" prefWidth="625.0">
+         <children>
+            <Label id="lb" layoutX="40.0" layoutY="15.0" text="Nombre de la promoción">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label id="lb" layoutX="40.0" layoutY="80.0" text="Descripción">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label id="lb" layoutX="40.0" layoutY="265.0" text="Restricciones">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cbEstatus" layoutX="343.0" layoutY="252.0" prefHeight="27.0" prefWidth="200.0" promptText="Estatus" />
+            <TextField fx:id="tfNombrePromo" layoutX="40.0" layoutY="40.0" prefHeight="27.0" prefWidth="200.0" />
+            <TextField fx:id="tfDescripcion" layoutX="40.0" layoutY="98.0" prefHeight="27.0" prefWidth="200.0" />
+            <TextField fx:id="tfRestricciones" layoutX="40.0" layoutY="285.0" prefHeight="27.0" prefWidth="200.0" />
+            <Button id="btn" layoutX="52.0" layoutY="434.0" mnemonicParsing="false" onAction="#btnGuardarPromocion" text="Guardar" />
+            <Button id="btn" fx:id="btnCancelar" layoutX="153.0" layoutY="434.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
+            <ComboBox fx:id="cbEmpresa" layoutX="343.0" layoutY="123.0" prefHeight="27.0" prefWidth="200.0" promptText="Empresa" />
+            <ImageView fx:id="ivImgPromocion" fitHeight="127.0" fitWidth="200.0" layoutX="343.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true" />
+            <DatePicker fx:id="dpFechaInicio" layoutX="40.0" layoutY="162.0" prefHeight="27.0" prefWidth="200.0" promptText="Fecha de inicio" />
+            <DatePicker fx:id="dpFechaFin" layoutX="40.0" layoutY="225.0" prefHeight="27.0" prefWidth="200.0" promptText="Fecha de fin" />
+            <Label id="lb" layoutX="40.0" layoutY="367.0" text="Cantidad rebajada">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfCantidadRebajada" layoutX="40.0" layoutY="386.0" prefHeight="27.0" prefWidth="200.0" />
+            <Label id="lb" fx:id="lbCodigo" layoutX="343.0" layoutY="11.0" text="Código de promoción">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cbSucursal" layoutX="343.0" layoutY="167.0" prefHeight="27.0" prefWidth="200.0" promptText="Sucursal" />
+            <ComboBox fx:id="cbTipoPromo" layoutX="40.0" layoutY="327.0" prefHeight="27.0" prefWidth="200.0" promptText="Tipo de promoción" />
+            <ComboBox fx:id="cbCategoria" layoutX="343.0" layoutY="210.0" prefHeight="27.0" prefWidth="200.0" promptText="Categoría" />
+            <TextField fx:id="tfCodigoPromo" layoutX="343.0" layoutY="29.0" prefHeight="27.0" prefWidth="200.0" />
+            <Label id="lb" layoutX="40.0" layoutY="139.0" text="Fecha de inicio">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label id="lb" layoutX="39.0" layoutY="200.0" text="Fecha de fin">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button id="btn" fx:id="btnActualizarF" layoutX="457.0" layoutY="434.0" mnemonicParsing="false" onAction="#clicActualizarFoto" text="Actualizar" />
+            <Button id="btn" fx:id="btnSeleccionarF" layoutX="339.0" layoutY="434.0" mnemonicParsing="false" onAction="#clicSeleccionarFoto" text="Seleccionar" />
+            <Label fx:id="lbNombrePromo" layoutX="38.0" layoutY="66.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <Label fx:id="lbDescripcion" layoutX="38.0" layoutY="127.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <Label fx:id="lbFechaInicio" layoutX="38.0" layoutY="189.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <Label fx:id="lbFechaFin" layoutX="38.0" layoutY="250.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <Label fx:id="lbRestricciones" layoutX="38.0" layoutY="311.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <Label fx:id="lbTipoPromo" layoutX="38.0" layoutY="355.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <Label fx:id="lbCantidadRebajada" layoutX="38.0" layoutY="415.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <Label fx:id="lbEstatus" layoutX="343.0" layoutY="281.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <Label fx:id="lbCategoria" layoutX="343.0" layoutY="237.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <Label fx:id="lbEmpresa" layoutX="343.0" layoutY="150.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <Label fx:id="lbSucursal" layoutX="343.0" layoutY="192.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <TextField fx:id="tfCuponesDisponibles" layoutX="343.0" layoutY="82.0" prefHeight="27.0" prefWidth="200.0" />
+            <Label id="lb" layoutX="343.0" layoutY="65.0" text="Cupones disponibles">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbCuponesDisponibles" layoutX="343.0" layoutY="106.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbCodigoPromo" layoutX="343.0" layoutY="54.0" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

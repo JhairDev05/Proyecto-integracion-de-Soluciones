@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ApiCupones</string>
+    <string name="lo_sentimos_por_el_momento_no_hay_promociones_disponibles">Lo sentimos por el momento no hay promociones disponibles</string>
+    <string name="lo_sentimos_no_hay_sucursales_donde_aplique_esta_promocion">Lo sentimos por el momento no hay sucursales donde aplique esta promocion</string>
+</resources>

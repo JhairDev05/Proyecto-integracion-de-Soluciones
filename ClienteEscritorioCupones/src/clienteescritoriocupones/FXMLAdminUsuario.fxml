@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="fondo" prefHeight="620.0" prefWidth="762.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clienteescritoriocupones.FXMLAdminUsuarioController">
+    <stylesheets>
+        <URL value="@fxmladminusuario.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane id="apbarra" prefHeight="64.0" prefWidth="762.0">
+         <children>
+            <Button id="btnhome" mnemonicParsing="false" onAction="#btnHome" prefHeight="91.0" prefWidth="106.0" />
+            <AnchorPane id="titulo" fx:id="lbTitulo" layoutX="240.0" layoutY="14.0" prefHeight="63.0" prefWidth="282.0" />
+         </children>
+      </AnchorPane>
+      <TableView id="tvUsuario" fx:id="tvUsuario" layoutX="38.0" layoutY="216.0" prefHeight="362.0" prefWidth="686.0">
+        <columns>
+          <TableColumn fx:id="colNombreUsuario" prefWidth="75.0" text="Nombre" />
+          <TableColumn fx:id="colApellidoP" prefWidth="117.0" text="Apellido paterno" />
+            <TableColumn fx:id="colApellidoM" prefWidth="113.0" text="Apellido materno" />
+            <TableColumn fx:id="colCurp" prefWidth="75.0" text="Curp" />
+            <TableColumn fx:id="colCorreo" prefWidth="68.0" text="Correo" />
+            <TableColumn fx:id="colUsername" prefWidth="78.0" text="Nombre usuario" />
+            <TableColumn fx:id="colRol" text="Rol" />
+            <TableColumn fx:id="colEmpresa" prefWidth="79.0" text="Empresa" />
+        </columns>
+      </TableView>
+      <Button id="btn" layoutX="423.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnAgregarUsuario" prefHeight="37.0" prefWidth="90.0" text="Agregar" />
+      <Button id="btn" layoutX="528.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnEditarUsuario" prefHeight="37.0" prefWidth="90.0" text="Editar" />
+      <Button id="btn" fx:id="btnEliminar" layoutX="636.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnEliminar" prefHeight="37.0" prefWidth="90.0" text="Eliminar" />
+      <TextField fx:id="tfBuscarUsuario" layoutX="38.0" layoutY="141.0" prefHeight="25.0" prefWidth="282.0" promptText="Buscar usuarios" />
+   </children>
+</AnchorPane>

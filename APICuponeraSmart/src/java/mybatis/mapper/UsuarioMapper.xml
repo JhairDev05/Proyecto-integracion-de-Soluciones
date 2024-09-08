@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="usuario">
+    
+    <select id="obtenerUsuarioId" resultType="modelo.pojo.Usuario" parameterType="modelo.pojo.Usuario">
+        SELECT * FROM usuario 
+        WHERE idUsuario = #{idUsuario}
+    </select>
+    
+    <select id="usuarioComercial" resultType="modelo.pojo.Usuario" parameterType="int">
+        SELECT * FROM usuario 
+        WHERE idRol = 2
+    </select>
+    
+    <select id="usuarioIdRol" resultType="modelo.pojo.Usuario" parameterType="int">
+        SELECT u.*, r.tipoAdmin, e.nombreEmpresa FROM usuario u
+        INNER JOIN rol r ON r.idRol = u.idRol
+        INNER JOIN empresa e ON e.idEmpresa = u.idEmpresa
+        WHERE u.idRol = 2
+    </select>
+    
+    <select id="obtenerUsuarios" resultType="modelo.pojo.Usuario">
+        SELECT u.*, r.tipoAdmin, e.nombreEmpresa FROM cuponera.usuario u
+        INNER JOIN cuponera.rol r ON r.idRol = u.idRol
+        INNER JOIN cuponera.empresa e ON e.idEmpresa = u.idEmpresa
+    </select>
+    
+    <select id="obtenerUsuariosEmpresa" resultType="modelo.pojo.Usuario">
+        <!--SELECT * FROM usuario 
+        WHERE idEmpresa = #{idEmpresa}-->
+        
+        SELECT DISTINCT u.idEmpresa, u.idRol, e.*, es.estatus FROM cuponera.usuario u
+        INNER JOIN cuponera.empresa e ON u.idEmpresa = e.idEmpresa
+        INNER JOIN cuponera.estatus es ON e.idEstatus = es.idEstatus
+        WHERE u.idEmpresa = #{idEmpresa}
+    </select>
+    
+    <select id="obtenerEmpresaUsuario" resultType="modelo.pojo.Empresa" parameterType="int">
+        
+        SELECT e.idEmpresa, e.nombreEmpresa, e.nombreComercial, e.nombreRepresentante, e.email, e.telefono, e.paginaWeb, 
+        e.rfc, e.idEstatus, es.estatus 
+        FROM cuponera.usuario u 
+        INNER JOIN cuponera.empresa e ON u.idEmpresa = e.idEmpresa
+        INNER JOIN cuponera.estatus es ON es.idEstatus = e.idEstatus
+        WHERE u.idUsuario = #{idUsuario}        
+
+    </select>
+    
+    <select id="obtenerSucursalEmpresa" resultType="modelo.pojo.Sucursal" parameterType="int">
+        SELECT s.* FROM usuario u 
+        INNER JOIN sucursal s ON u.idEmpresa = s.idEmpresa
+        WHERE u.idEmpresa = #{idEmpresa}
+    </select>
+    
+    <insert id="registrar" parameterType="modelo.pojo.Usuario">
+        INSERT INTO usuario (nombre, apellidoPaterno, apellidoMaterno, curp, correo, nombreUsuario, password, idRol, idEmpresa)
+        VALUES (#{nombre}, #{apellidoPaterno}, #{apellidoMaterno}, #{curp}, #{correo}, #{nombreUsuario}, #{password}, 
+        #{idRol}, #{idEmpresa})
+    </insert>
+    
+    <update id="editar" parameterType="map">
+        UPDATE usuario 
+        SET nombre = #{nombre}, apellidoPaterno = #{apellidoPaterno}, apellidoMaterno = #{apellidoMaterno}, curp = #{curp}, 
+        correo = #{correo}, nombreUsuario = #{nombreUsuario}, password = #{password}, idEmpresa = #{idEmpresa} 
+        WHERE idUsuario = #{idUsuario}
+    </update>
+    
+    <delete id="eliminar" parameterType="int">
+        DELETE FROM usuario 
+        WHERE idUsuario = #{idUsuario}
+    </delete>
+    
+    <select id="verificarCurpExistente" resultType="int" parameterType="modelo.pojo.Usuario">
+        SELECT COUNT(*) FROM usuario WHERE curp = #{curp}
+    </select>
+    
+    <select id="verificarNombreUsuarioExiste" resultType="int" parameterType="modelo.pojo.Usuario">
+        SELECT COUNT(*) FROM usuario WHERE nombreUsuario = #{nombreUsuario}
+    </select>
+    
+    <select id="buscar" resultType="modelo.pojo.Usuario" parameterType="String">
+        SELECT * FROM usuario
+        WHERE nombre LIKE "%"#{nombre}"%" 
+        UNION
+        SELECT * FROM usuario
+        WHERE nombreUsuario LIKE "%"#{nombre}"%"
+        UNION
+        SELECT * FROM usuario
+        WHERE idRol LIKE "%"#{nombre}"%"
+</select>
+
+    
+</mapper>

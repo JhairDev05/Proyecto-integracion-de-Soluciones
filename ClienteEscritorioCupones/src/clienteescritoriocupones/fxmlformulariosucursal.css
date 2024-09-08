@@ -1,0 +1,49 @@
+.mainFxmlClass {
+
+}
+
+#fondo{
+    -fx-background-image: url('img/fondo.jpg');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+#apbarra{
+    -fx-background-image: url('img/loggo.png');
+    -fx-background-size: 15%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left;
+    -fx-background-color: #54cd1f;
+}
+
+#apFormulario{
+    -fx-background-color: #1066cc;
+    -fx-alignment: center; /* Centro en el AnchorPane */
+
+    -fx-background-radius: 10px; /* Radio de los bordes */
+    -fx-border-radius: 10px; /* Radio de los bordes */
+    -fx-background-insets: 0, 2, 2; /* Espacio para la sombra */
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, .1), 10, 0, 0, 1); /* Sombra */
+}
+
+#apFormulario Label{
+    -fx-text-fill: #FFFFFF;
+}
+
+#apFormulario TextField{
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: transparent;
+    -fx-border-color: #44c545;
+    -fx-border-width: 0px 0px 2px 0px;
+}
+
+#apFormulario Button{
+    -fx-background-color: #54cd1f; /* Color de fondo azul medio fuerte */
+    -fx-text-fill: #FFFFFF; /* Color de texto blanco */
+    -fx-background-radius: 10px; /* Hace el botón redondo */
+    -fx-padding: 10px 20px; /* Ajusta el relleno (padding) para el tamaño del botón */
+    -fx-alignment: center;
+
+    -fx-cursor: hand; /* Cambia el cursor al pasar el cursor sobre el botón */
+}

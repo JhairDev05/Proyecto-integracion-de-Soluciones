@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="fondo" prefHeight="620.0" prefWidth="762.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clienteescritoriocupones.FXMLAdminPromocionController">
+    <stylesheets>
+        <URL value="@fxmladminpromocion.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane id="apbarra" prefHeight="64.0" prefWidth="762.0">
+         <children>
+            <Button id="btnhome" mnemonicParsing="false" onAction="#btnHome" prefHeight="91.0" prefWidth="106.0" />
+            <AnchorPane id="titulo" fx:id="lbTitulo" layoutX="240.0" layoutY="14.0" prefHeight="63.0" prefWidth="282.0" />
+         </children>
+      </AnchorPane>
+      <TableView id="tvPromos" fx:id="tvPromociones" layoutX="38.0" layoutY="216.0" prefHeight="362.0" prefWidth="686.0">
+        <columns>
+          <TableColumn fx:id="colNombreP" prefWidth="75.0" text="Nombre" />
+          <TableColumn fx:id="colDescripcion" prefWidth="75.0" text="Descripción" />
+            <TableColumn fx:id="colFechaInicio" prefWidth="75.0" text="Fecha inicio" />
+            <TableColumn fx:id="colFechaFin" prefWidth="75.0" text="Fecha fin" />
+            <TableColumn fx:id="colRestricciones" prefWidth="75.0" text="Restricciones" />
+            <TableColumn fx:id="colCodigoP" prefWidth="75.0" text="Código" />
+            <TableColumn fx:id="colTipoPromo" prefWidth="85.0" text="Tipo de promoción" />
+            <TableColumn fx:id="colCategoria" prefWidth="65.0" text="Categoria" />
+            <TableColumn fx:id="colEstatus" prefWidth="85.0" text="Estatus" />
+        </columns>
+      </TableView>
+      <TextField fx:id="tfBuscarPromo" layoutX="38.0" layoutY="141.0" prefHeight="25.0" prefWidth="282.0" promptText="Buscar promociones" />
+      <Button id="btn" layoutX="423.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnAgregarPromocion" prefHeight="25.0" prefWidth="90.0" text="Agregar" />
+      <Button id="btn" layoutX="528.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnEditarPromocion" prefHeight="25.0" prefWidth="90.0" text="Editar" />
+      <Button id="btn" layoutX="636.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnEliminarPromocion" prefHeight="25.0" prefWidth="90.0" text="Eliminar" />
+   </children>
+</AnchorPane>
